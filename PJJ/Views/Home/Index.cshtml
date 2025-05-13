@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mb-3">
+    <h1 class="display-4 text-primary fw-bold">Welcome!</h1>
+</div>
+
+<div class="container mb-5">
+    <div class="bg-light rounded-4 p-4 shadow-sm">
+        <h3 class="text-secondary fw-semibold mb-3 text-center">About the Project</h3>
+        <p class="lead text-center mb-0">
+            This system integrates <span class="fw-bold text-primary">two AI models</span> to detect fraud:
+            one for <span class="fw-semibold text-primary">transaction analysis</span> and another for
+            <span class="fw-semibold text-primary">loan verification</span>.
+            Both models are deployed using hosted <span class="fw-bold text-danger">Flask APIs</span> to provide real-time fraud detection with high accuracy and scalability.
+        </p>
+    </div>
+</div>
+
+<div class="text-center mb-4">
+    <h2 class="lead">Meet our outstanding team behind this initiative.</h2>
+</div>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+    @{
+        var teamMembers = new[] { "Mai Farahat", "Aya Badawy", "Mona Ayoub", "Mariam Mamdouh", "Mohamed Alaa",
+    "Alaa Hesham", "Aya Samir", "Nada Roshdy", "Nada Reda", "Mohamed Mattar" };
+
+        foreach (var member in teamMembers)
+        {
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm card-hover">
+                    <div class="card-body">
+                        <h5 class="card-title">@member</h5>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<style>
+    .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card-hover:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    .bg-light {
+        background-color: #f8f9fa !important;
+    }
+</style>

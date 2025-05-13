@@ -1,0 +1,62 @@
+﻿@model PJJ.Models.TransactionInput
+@{
+    ViewData["Title"] = "Fraud Detection Prediction";
+    var transactionTypes = new List<SelectListItem>
+    {
+        new SelectListItem { Value = "PAYMENT", Text = "Payment" },
+        new SelectListItem { Value = "TRANSFER", Text = "Transfer" },
+        new SelectListItem { Value = "CASH_OUT", Text = "Cash Out" },
+        new SelectListItem { Value = "DEBIT", Text = "Debit" }
+    };
+}
+
+<div class="container my-5">
+
+    <form method="post" class="card p-4 shadow-sm">
+        <div class="mb-3">
+            <label asp-for="type" class="form-label"></label>
+            <select asp-for="type" asp-items="@transactionTypes" class="form-select">
+                <option value="">---Select Transaction Type---</option>
+            </select>
+            <span asp-validation-for="type" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="amount" class="form-label"></label>
+            <input asp-for="amount" class="form-control" type="number" step="0.01" min="0" />
+            <span asp-validation-for="amount" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="oldbalanceOrg" class="form-label"></label>
+            <input asp-for="oldbalanceOrg" class="form-control" type="number" step="0.01" min="0" />
+            <span asp-validation-for="oldbalanceOrg" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="newbalanceOrig" class="form-label"></label>
+            <input asp-for="newbalanceOrig" class="form-control" type="number" step="0.01" min="0" />
+            <span asp-validation-for="newbalanceOrig" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="oldbalanceDest" class="form-label"></label>
+            <input asp-for="oldbalanceDest" class="form-control" type="number" step="0.01" min="0" />
+            <span asp-validation-for="oldbalanceDest" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="newbalanceDest" class="form-label"></label>
+            <input asp-for="newbalanceDest" class="form-control" type="number" step="0.01" min="0" />
+            <span asp-validation-for="newbalanceDest" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Predict</button>
+    </form>
+
+    
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
