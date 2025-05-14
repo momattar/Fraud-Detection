@@ -4,6 +4,14 @@ This is a web application built with ASP.NET MVC that helps detect fraudulent tr
 
 ---
 
+## 🌐 Live Demo
+
+🚀 Hosted at:  
+**https://team2-ai.runasp.net**
+
+You can access and interact with the fraud detection modules directly through the hosted web interface.
+
+---
 ## 📌 Overview
 
 The project consists of two main fraud detection modules:
